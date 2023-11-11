@@ -49,18 +49,20 @@ const config: Config = {
                 accountOrange: "var(--accountOrange)",
                 accountYellow: "var(--accountYellow)",
                 accountRed: "var(--accountRed)",
-                "LighterGreen-to-Green":"linear-gradient(to right,rgba(var(--tmdbLighterGreen),1) 0%,rgba(var(--tmdbLightGreen),1) 100%)",
-                "LighterGreen-to-LightBlue": "linear-gradient(to right,rgba(var(--tmdbLightGreen),1) 0%,rgba(var(--tmdbLightBlue),1) 100%)",
-                "yellow-to-blue": "linear-gradient(to right,#c0fecf 0,#1ed5a9 100%)",
-                "Orange-to-Red":"linear-gradient(to right,rgba(var(--tmdbLogoOrange),1) 0%,rgba(var(--tmdbLogoRed),1) 100%)",
             },
             fontFamily: {
                 global: ["var(--font-source-sans-3)", "sans-serif"],
             },
-            borderRadius:{
-                imageBorderRadius:"8px"
+            borderRadius: {
+                imageBorderRadius: "8px"
             },
-            linearGradientColors: {},
+            backgroundImage: {
+                'headerImage': "linear-gradient(to right, rgba(3,37,65, 0.8) 0%, rgba(3,37,65, 0) 100%), url(/header.jpg)",
+                "LighterGreen-to-Green": "linear-gradient(to right,rgba(192, 254, 207,1) 0%,rgba(30, 213, 169,1) 100%)",
+                "LighterGreen-to-LightBlue": "linear-gradient(to right,rgba(30, 213, 169,1) 0%,rgba(1, 180, 228,1) 100%)",
+                "yellow-to-blue": "linear-gradient(to right,#c0fecf 0,#1ed5a9 100%)",
+                "Orange-to-Red": "linear-gradient(to right,rgba(253, 193, 112,1) 0%,rgba(217, 59, 99,1) 100%)",
+            },
         },
     },
     plugins: [

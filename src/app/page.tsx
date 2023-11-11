@@ -1,9 +1,14 @@
 import Image from 'next/image'
+import Header from '../components/Header'
+import {type NextPage} from 'next'
 
-export default function Home() {
+
+const Home: NextPage = ()=> {
   return (
-    <main>
+    <>
       
-    </main>
+      <Header />
+    </>
   )
 }
+export default Home
