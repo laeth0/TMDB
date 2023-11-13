@@ -22,7 +22,7 @@ export default function Navbar() {
     return (
         <>
             <header className="h-[7.5vh] bg-tmdbDarkBlue flex items-center  text-white">
-                
+
                 <div className="container hidden md:flex justify-between items-center">
                     <div className="flex items-center gap-8">
                         <Link href="/" aria-label="the is the header image and take you to main page">
@@ -167,7 +167,7 @@ export default function Navbar() {
 
 
                 <div className="flex md:hidden items-center justify-around flex-1">
-                    <GiHamburgerMenu size={20} onClick={handleOpenSideBar} className="cursor-pointer" aria-expanded={openSideBar ? "true":"false"} />
+                    <GiHamburgerMenu size={20} onClick={handleOpenSideBar} className="cursor-pointer" aria-expanded={openSideBar ? "true" : "false"} />
                     <Link href="/" aria-label="the is the header image and take you to main page" >
                         <Image className="h-5 w-auto" src={NavbarImage} alt="the is the header image" />
                     </Link>

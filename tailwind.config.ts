@@ -1,4 +1,4 @@
-import { Carusel } from '@/components/Carusel';
+import { Carusel } from '@/components/SectionHome/Carusel';
 import type { Config } from 'tailwindcss'
 
 const config: Config = {

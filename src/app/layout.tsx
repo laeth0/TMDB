@@ -3,7 +3,7 @@ import { Source_Sans_3 } from 'next/font/google'
 import './globals.css'
 import Footer from '../components/Footer'
 import { ClerkProvider } from '@clerk/nextjs'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/NavbarHome/Navbar'
 
 const globalFont = Source_Sans_3({
     subsets: ['latin'],

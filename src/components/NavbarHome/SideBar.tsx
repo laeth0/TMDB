@@ -1,26 +1,25 @@
 "use client"
 import * as Accordion from '@radix-ui/react-accordion';
-import { ReactNode, Ref, forwardRef } from 'react';
+import { Ref, forwardRef } from 'react';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
-// import { twMerge } from 'tailwind-merge'
-import cn from './TwMerge'
+import cn from '../../Shared/TwMerge'
 
 interface forwardRefItemProp extends Accordion.AccordionItemProps {
-    children: ReactNode;
+    children: React.ReactNode;
     className?: string;
 }
 interface forwardRefTriggerProp extends Accordion.AccordionTriggerProps {
-    children: ReactNode;
+    children: React.ReactNode;
     className?: string;
 }
 
 interface forwardRefContentProp extends Accordion.AccordionContentProps {
-    children: ReactNode;
+    children: React.ReactNode;
     className?: string;
 }
 
-export default function SideBar({ openSideBar, handleOpenSideBar }: { openSideBar: boolean, handleOpenSideBar: () => void }) {
+export default function SideBar({ openSideBar, handleOpenSideBar }: { openSideBar: boolean, handleOpenSideBar: Function }) {
     // eslint-disable-next-line react/display-name
     const AccordionItem = forwardRef(({ children, className, ...props }: forwardRefItemProp, forwardedRef: Ref<any>) => (
         <Accordion.Item  {...props} ref={forwardedRef}

@@ -4,23 +4,26 @@ import { general_options_for_TMDB_API, Base_URL_for_TMDB_API, Base_URL_for_TMDB_
 import { MovieListType } from '@/Shared/Types'
 import Circle from './Circle'
 import DropDownMenuForFilmImage from './DropDownMenuForFilmImage';
-import {useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 const Image = dynamic(() => import('next/image'));
 
 export default function Carusel({ Specific_URL }: { Specific_URL: string }) {
-    // const res = await fetch(`${Base_URL_for_TMDB_API}/${Specific_URL}`, general_options_for_TMDB_API);
-    // const data: MovieListType = await res.json();
+    //! const res = await fetch(`${Base_URL_for_TMDB_API}/${Specific_URL}`, general_options_for_TMDB_API);
+    //! const data: MovieListType = await res.json();
+    //! this way i can fetch data in server side component 
+
     const [data, setData] = useState<MovieListType>()
-    const fetchData =  () => {
+    const fetchData = () => {
         fetch(`${Base_URL_for_TMDB_API}/${Specific_URL}`, general_options_for_TMDB_API)
-        .then(res => res.json())
-        .then(data => setData(data))
-        .catch(err => console.log(err));
+            .then(res => res.json())
+            .then(data => setData(data))
+            .catch(err => console.log(err));
     }
+
     useEffect(() => {
         fetchData()
     }, [Specific_URL])
-    
+
     return (
         <ul className='flex h-[380px] bg-no-repeat overflow-x-scroll overflow-y-hidden gap-6 bg-CaruselImage bg-[center_105px]'>
             {data?.results.map(movie =>
