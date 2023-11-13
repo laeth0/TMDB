@@ -10,7 +10,7 @@ export default async function Footer() {
     const user = await currentUser();
 
     return (
-        <footer className=" py-10 flex flex-col px-10 items-center sm:justify-center sm:items-start sm:flex-row  bg-tmdbDarkBlue text-white gap-8 font-global">
+        <footer className=" py-10 flex flex-col px-10 items-center sm:justify-center sm:items-start sm:flex-row  bg-tmdbDarkBlue text-white gap-8">
             <div className="flex flex-col items-center gap-6">
                 <Image
                     src={FooterImage}

@@ -1,3 +1,4 @@
+import { Carusel } from '@/components/Carusel';
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -57,6 +58,7 @@ const config: Config = {
                 imageBorderRadius: "8px"
             },
             backgroundImage: {
+                "CaruselImage": "url(/Carusel_BG.svg)",
                 'headerImage': "linear-gradient(to right, rgba(3,37,65, 0.8) 0%, rgba(3,37,65, 0) 100%), url(/header.jpg)",
                 "LighterGreen-to-Green": "linear-gradient(to right,rgba(192, 254, 207,1) 0%,rgba(30, 213, 169,1) 100%)",
                 "LighterGreen-to-LightBlue": "linear-gradient(to right,rgba(30, 213, 169,1) 0%,rgba(1, 180, 228,1) 100%)",

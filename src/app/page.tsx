@@ -1,13 +1,12 @@
-import Image from 'next/image'
 import Header from '../components/Header'
-import {type NextPage} from 'next'
+import { type NextPage } from 'next'
+import SectionMoviesShow from '@/components/SectionMoviesShow'
 
-
-const Home: NextPage = ()=> {
+const Home: NextPage = () => {
   return (
     <>
-      
       <Header />
+      <SectionMoviesShow title='Trending' sectionData={[{ title: "Today", url: "/trending/all/day?language=en-US" }, { title: "This Week", url:"/trending/all/week?language=en-US"}]} />
     </>
   )
 }

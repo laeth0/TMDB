@@ -12,16 +12,20 @@ import { SignUpButton, SignInButton } from "@clerk/nextjs";
 import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import SideBar from './SideBar'
 import { useState } from "react";
+import { useUser } from "@clerk/nextjs"; //# i can use it in client components
 
 export default function Navbar() {
     const [openSideBar, setOpenSideBar] = useState(false)
     const handleOpenSideBar = () => setOpenSideBar(!openSideBar)
+    const { user } = useUser(); //# i can use it in client components
+
     return (
         <>
             <header className="h-[7.5vh] bg-tmdbDarkBlue flex items-center  text-white">
+                
                 <div className="container hidden md:flex justify-between items-center">
                     <div className="flex items-center gap-8">
-                        <Link href="/">
+                        <Link href="/" aria-label="the is the header image and take you to main page">
                             <Image className="h-5 w-auto" src={NavbarImage} alt="the is the header image" />
                         </Link>
                         <Menubar.Root className="flex p-[3px] rounded-md shadow-[0_2px_10px]">
@@ -143,7 +147,7 @@ export default function Navbar() {
                             {/*//! login and logout */}
                             <SignedIn>
                                 <BsFillBellFill size={20} />
-                                <UserButton afterSignOutUrl="/sign-up" userProfileMode="navigation" userProfileUrl="/profile" />
+                                <UserButton afterSignOutUrl="/sign-up" userProfileMode="navigation" userProfileUrl={`/profile/${user?.fullName}`} />
                             </SignedIn>
                             <SignedOut>
                                 <SignInButton>
@@ -159,16 +163,20 @@ export default function Navbar() {
                         </Menubar.Root>
                     </div>
                 </div>
+                {/*//- end of div container */}
+
+
                 <div className="flex md:hidden items-center justify-around flex-1">
-                    <GiHamburgerMenu size={20} onClick={handleOpenSideBar} className="cursor-pointer" />
-                    <Link href="/">
+                    <GiHamburgerMenu size={20} onClick={handleOpenSideBar} className="cursor-pointer" aria-expanded={openSideBar ? "true":"false"} />
+                    <Link href="/" aria-label="the is the header image and take you to main page" >
                         <Image className="h-5 w-auto" src={NavbarImage} alt="the is the header image" />
                     </Link>
-                    <div className="flex gap-6">
-                        <UserButton afterSignOutUrl="/sign-up" />
+                    <div className="flex gap-6 items-center">
+                        <UserButton afterSignOutUrl="/sign-up" userProfileMode="navigation" userProfileUrl={`/profile/${user?.fullName}`} />
                         <FaSearch className="text-[#01B4E4]" size={20} />
                     </div>
                 </div>
+
             </header>
             <SideBar openSideBar={openSideBar} handleOpenSideBar={handleOpenSideBar} />
         </>

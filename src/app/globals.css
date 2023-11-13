@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  font-family: var(--font-source-sans-3) !important;
+}
+
+
 :root {
   --scrollerGrey: rgb(219, 219, 219);
   --lightGrey: rgb(227, 227, 227);
@@ -28,6 +33,10 @@
 ::-webkit-scrollbar {
   background: #FFF;
   width: 0.5rem;
+}
+
+ul::-webkit-scrollbar {
+  height: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb {

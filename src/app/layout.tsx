@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <body className={`${globalFont.variable} debug-screens`}>
                 <ClerkProvider>
                     <Navbar />
-                    <main>
+                    <main className='flex flex-col gap-10'> {/*//! please dont remove main tag  */}
                         {children}
                     </main>
                     <Footer />
