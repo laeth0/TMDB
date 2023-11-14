@@ -24,7 +24,7 @@ export default function Carusel({ Specific_URL }: { Specific_URL: string }) {
 
 
     return (
-        <ul className='flex h-[380px] bg-no-repeat overflow-x-scroll overflow-y-hidden gap-6 bg-CaruselImage bg-[center_105px]'>
+        <ul className='flex h-[400px] bg-no-repeat overflow-x-scroll overflow-y-hidden gap-6 bg-CaruselImage bg-[center_105px]'>
             {
                 data?.results?.map(movie =>
                     <li className="relative flex-[0_0_150px] bg-red gap-3 flex flex-col" key={movie.id}>

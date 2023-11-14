@@ -1,6 +1,7 @@
 import Header from '../components/Header'
 import { type NextPage } from 'next'
 import SectionMoviesShow from '@/components/SectionHome/SectionMoviesShow'
+import LeaderboardSection from '@/components/LeaderboardSection'
 
 const Home: NextPage = () => {
   return (
@@ -24,7 +25,7 @@ const Home: NextPage = () => {
         { title: "Movies", url: "/discover/movie?include_adult=false&include_video=false&language=en-US&page=9&sort_by=popularity.desc" },
         { title: "TV", url: "/discover/movie?include_adult=false&include_video=false&language=en-US&page=10&sort_by=popularity.desc" }]} />
 
-
+      <LeaderboardSection />
     </>
   )
 }
