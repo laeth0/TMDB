@@ -13,39 +13,35 @@ interface forwardRefTriggerProp extends Accordion.AccordionTriggerProps {
     children: React.ReactNode;
     className?: string;
 }
-
 interface forwardRefContentProp extends Accordion.AccordionContentProps {
     children: React.ReactNode;
     className?: string;
 }
+// eslint-disable-next-line react/display-name
+const AccordionItem = forwardRef(({ children, className, ...props }: forwardRefItemProp, forwardedRef: Ref<any>) => (
+    <Accordion.Item  {...props} ref={forwardedRef}
+        className={cn('overflow-hidden focus-within:relative focus-within:z-10', className)} >
+        {children}
+    </Accordion.Item>
+));
+// eslint-disable-next-line react/display-name
+const AccordionTrigger = forwardRef(({ children, className, ...props }: forwardRefTriggerProp, forwardedRef: Ref<any>) => (
+    <Accordion.Header className="flex">
+        <Accordion.Trigger {...props} ref={forwardedRef} className={cn('group flex h-[45px] flex-1 items-center justify-between px-5', className)}  >
+            {children}
+            <HiOutlineChevronDown className="ease-[cubic-bezier(0.87,_0,_0.13,_1)] duration-500 transition-transform group-data-[state=open]:rotate-180" />
+        </Accordion.Trigger>
+    </Accordion.Header>
+));
+// eslint-disable-next-line react/display-name
+const AccordionContent = forwardRef(({ children, className, ...props }: forwardRefContentProp, forwardedRef: Ref<any>) => (
+    <Accordion.Content {...props} ref={forwardedRef}
+        className={cn('data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp', className)} >
+        <div className="py-[15px] px-5">{children}</div>
+    </Accordion.Content>
+));
 
 export default function SideBar({ openSideBar, handleOpenSideBar }: { openSideBar: boolean, handleOpenSideBar: Function }) {
-    // eslint-disable-next-line react/display-name
-    const AccordionItem = forwardRef(({ children, className, ...props }: forwardRefItemProp, forwardedRef: Ref<any>) => (
-        <Accordion.Item  {...props} ref={forwardedRef}
-            className={cn('overflow-hidden focus-within:relative focus-within:z-10', className)} >
-            {children}
-        </Accordion.Item>
-    ));
-
-    // eslint-disable-next-line react/display-name
-    const AccordionTrigger = forwardRef(({ children, className, ...props }: forwardRefTriggerProp, forwardedRef: Ref<any>) => (
-        <Accordion.Header className="flex">
-            <Accordion.Trigger {...props} ref={forwardedRef} className={cn('group flex h-[45px] flex-1 items-center justify-between px-5', className)}  >
-                {children}
-                <HiOutlineChevronDown className="ease-[cubic-bezier(0.87,_0,_0.13,_1)] duration-500 transition-transform group-data-[state=open]:rotate-180" />
-            </Accordion.Trigger>
-        </Accordion.Header>
-    ));
-
-    // eslint-disable-next-line react/display-name
-    const AccordionContent = forwardRef(({ children, className, ...props }: forwardRefContentProp, forwardedRef: Ref<any>) => (
-        <Accordion.Content {...props} ref={forwardedRef}
-            className={cn('data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp', className)} >
-            <div className="py-[15px] px-5">{children}</div>
-        </Accordion.Content>
-    ));
-
     return (
         <nav className={`text-white fixed ${openSideBar ? "left-0" : "-left-[70%]"} top-0 bottom-0 w-[70%] bg-tmdbDarkBlue z-[999] p-9 ease-[ease] duration-300`}>
             <div className='mb-8 flex justify-end'>
@@ -54,9 +50,7 @@ export default function SideBar({ openSideBar, handleOpenSideBar }: { openSideBa
 
             <Accordion.Root type="single" defaultValue="item-4" collapsible  >
                 <AccordionItem value="item-1">
-                    <AccordionTrigger aria-label="Movies"> {/* //? aria-label -> his job is to tell the screen reader what the button does when it is clicked on by a user with a screen reader enabled.  */}
-                        Movies
-                    </AccordionTrigger>
+                    <AccordionTrigger aria-label="Movies"> Movies</AccordionTrigger>
                     <AccordionContent>
                         <ul className='text-[rgba(255,255,255,.6)] font-semibold gap-2 flex flex-col'>
                             <li>
@@ -76,9 +70,7 @@ export default function SideBar({ openSideBar, handleOpenSideBar }: { openSideBa
                 </AccordionItem>
 
                 <AccordionItem value="item-2">
-                    <AccordionTrigger aria-label="TV Shows">
-                        TV Shows
-                    </AccordionTrigger>
+                    <AccordionTrigger aria-label="TV Shows"> TV Shows </AccordionTrigger>
                     <AccordionContent>
                         <ul className='text-[rgba(255,255,255,.6)] font-semibold gap-2 flex flex-col'>
                             <li>
@@ -98,9 +90,7 @@ export default function SideBar({ openSideBar, handleOpenSideBar }: { openSideBa
                 </AccordionItem>
 
                 <AccordionItem value="item-3">
-                    <AccordionTrigger aria-label="People">
-                        People
-                    </AccordionTrigger>
+                    <AccordionTrigger aria-label="People"> People</AccordionTrigger>
                     <AccordionContent>
                         <ul className='text-[rgba(255,255,255,.6)] font-semibold gap-2 flex flex-col'>
                             <li>
@@ -111,9 +101,7 @@ export default function SideBar({ openSideBar, handleOpenSideBar }: { openSideBa
                 </AccordionItem>
 
                 <AccordionItem value="item-4">
-                    <AccordionTrigger aria-label="More">
-                        More
-                    </AccordionTrigger>
+                    <AccordionTrigger aria-label="More"> More </AccordionTrigger>
                     <AccordionContent>
                         <ul className='text-[rgba(255,255,255,.6)] font-semibold gap-2 flex flex-col'>
                             <li>

@@ -17,6 +17,7 @@
     "@radix-ui/react-form": "^0.0.3",
     "@radix-ui/react-menubar": "^1.0.4",
     "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-toggle-group": "^1.0.4",
     "clsx": "^2.0.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-tailwindcss": "^3.13.0",
