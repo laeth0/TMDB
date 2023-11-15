@@ -1,7 +1,12 @@
-import { Carusel } from '@/components/SectionHome/Carusel';
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
+    //? important: true,  //-The important option lets you control whether or not Tailwind’s utilities should be marked with !important. This can be really useful when using Tailwind with existing CSS that has high specificity selectors.To generate utilities as !important, set the important key in your configuration options to true
+    // Alternatively, you can make any utility important by adding a ! character to the beginning:
+    //<p class="font-bold !font-medium" >
+    //This will be medium even though bold comes later in the CSS.
+    //</p>
+    // --------------------------------------------------------------------------
     mode: "jit",
     content: [
         './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
