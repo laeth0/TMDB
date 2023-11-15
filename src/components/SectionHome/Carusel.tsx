@@ -28,7 +28,7 @@ export default function Carusel({ Specific_URL }: { Specific_URL: string }) {
             {
                 data?.results?.map(movie =>
                     <li className="relative flex-[0_0_150px] bg-red gap-3 flex flex-col" key={movie.id}>
-                        <Image className='h-56 w-[150px] rounded-imageBorderRadius' width={150} height={225} src={`${Base_URL_for_TMDB_Images}${movie.poster_path}`} alt="this is film image" />
+                        <Image className='h-56 w-auto rounded-imageBorderRadius' width={150} height={224} src={`${Base_URL_for_TMDB_Images}${movie.poster_path}`} alt="this is film image" />
                         <div className='flex flex-col items-center'>
                             <h2 className='text-black font-bold w-4/5'>{movie.title || "Beacon 23"}</h2>
                             <p className='text-base text-[rgba(0,0,0,.6)] w-4/5'>{movie.release_date || "2023-09-15"}</p>
