@@ -17,7 +17,7 @@ export default async function Footer() {
                     className="w-36 hidden sm:block"
                     alt="this is the footer image"
                 />
-                <Link className='w-fit bg-white rounded-md py-2  px-7 text-tmdbLightBlue min-w-max font-bold' href="/"> {user?.id ? `Hi ${user?.firstName}` : "Join the Community"} </Link>
+                <Link className='w-fit bg-white rounded-md py-2  px-7 text-blue-600 min-w-max font-bold' href="/"> {user?.id ? `Hi ${user?.firstName}` : "Join the Community"} </Link>
             </div>
             <div>
                 <h3 className="text-xl font-bold">THE BASICS</h3>

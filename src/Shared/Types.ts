@@ -1,4 +1,4 @@
-export type MovieType = {
+type MovieType = {
     adult: boolean,
     backdrop_path: string,
     id: number,
@@ -19,5 +19,30 @@ export type MovieListType = {
     page: number,
     results: MovieType[],
     total_pages: number,
-    total_results: number
+    total_results: number 
+}
+//---------------------------------------------------------------------------------------------------
+
+export type popular={
+    adult: boolean,
+    backdrop_path: string,
+    genre_ids: number[],
+    id: number,
+    origin_country: string[],
+    original_language: string,
+    original_name: string,
+    overview: string,
+    popularity: number,
+    poster_path: string,
+    first_air_date: string,
+    name: string,
+    vote_average: number,
+    vote_count: number
+}
+
+export type PopularTVList={
+    page: number,
+    results: popular[],
+    total_pages: number,
+    total_results: number,
 }

@@ -7,15 +7,14 @@ import * as Menubar from '@radix-ui/react-menubar';
 import Image from 'next/image'
 import Link from 'next/link'
 import NavbarImage from '@/../public/NavbarImage.svg'
-import {  SignedIn, SignedOut } from "@clerk/nextjs";
-import { useUser } from "@clerk/nextjs"; //# i can use it in client components
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { FC } from 'react';
 
 const UserButtonAndBill = dynamic(() => import('./UserButtonAndBill'), { ssr: false });
 const SignButtons = dynamic(() => import('./SignButtons'));
 
 
-export default function BigScreenNavbar() {
-    const { user } = useUser(); //# i can use it in client components
+const BigScreenNavbar: FC = () => {
 
     return (
         <div className="container flex justify-between items-center">
@@ -53,7 +52,7 @@ export default function BigScreenNavbar() {
                         <Menubar.Portal>
                             <Menubar.Content align="start" sideOffset={5} alignOffset={-3} className="min-w-[220px] bg-white rounded-md p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] [animation-duration:400ms] [animation-timing-function:_cubic-bezier(0.16,_1,_0.3,_1)] will-change-[transform,opacity]" >
                                 <Menubar.Item className="group text-[13px] leading-none text-violet11 rounded flex items-center h-[25px] px-[10px] relative select-none outline-none data-[state=open]:bg-violet4 data-[state=open]:text-violet11 data-[highlighted]:bg-gradient-to-br data-[highlighted]:from-violet9 data-[highlighted]:to-violet10 data-[highlighted]:text-violet1 data-[highlighted]:data-[state=open]:text-violet1 data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none">
-                                    Popular
+                                    <Link href="/PopularTVShows">Popular</Link>
                                 </Menubar.Item>
                                 <Menubar.Item className="group text-[13px] leading-none text-violet11 rounded flex items-center h-[25px] px-[10px] relative select-none outline-none data-[state=open]:bg-violet4 data-[state=open]:text-violet11 data-[highlighted]:bg-gradient-to-br data-[highlighted]:from-violet9 data-[highlighted]:to-violet10 data-[highlighted]:text-violet1 data-[highlighted]:data-[state=open]:text-violet1 data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none">
                                     Airing Today
@@ -69,13 +68,13 @@ export default function BigScreenNavbar() {
                     </Menubar.Menu>
 
                     <Menubar.Menu>
-                        <Menubar.Trigger className="py-2 px-3 select-none font-medium leading-none rounded text-[13px] flex items-center justify-between gap-[2px] data-[highlighted]:bg-violet4 data-[state=open]:bg-violet4">
+                        <Menubar.Trigger className="py-2 px-3 select-none font-medium leading-none rounded text-[13px] flex items-center justify-between gap-[2px]">
                             People
                         </Menubar.Trigger>
 
                         <Menubar.Portal>
                             <Menubar.Content align="start" sideOffset={5} alignOffset={-3} className="min-w-[220px] bg-white rounded-md p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] [animation-duration:400ms] [animation-timing-function:_cubic-bezier(0.16,_1,_0.3,_1)] will-change-[transform,opacity]" >
-                                <Menubar.Item className="group text-[13px] leading-none text-violet11 rounded flex items-center h-[25px] px-[10px] relative select-none outline-none data-[state=open]:bg-violet4 data-[state=open]:text-violet11 data-[highlighted]:bg-gradient-to-br data-[highlighted]:from-violet9 data-[highlighted]:to-violet10 data-[highlighted]:text-violet1 data-[highlighted]:data-[state=open]:text-violet1 data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none">
+                                <Menubar.Item className="group text-[13px] leading-none rounded flex items-center h-[25px] px-[10px] relative select-none outline-none ">
                                     Popular People
                                 </Menubar.Item>
                             </Menubar.Content>
@@ -110,10 +109,10 @@ export default function BigScreenNavbar() {
 
             {/*//- end of first section */}
             <div className="flex gap-8 justify-center items-center">
-                <Menubar.Root className="flex p-[3px] gap-8 px-6 items-center rounded-md shadow-[0_2px_10px]">
+                <Menubar.Root className="flex p-[3px] gap-8 px-6 items-center rounded-md shadow-[0_2px_10px]" aria-label='root of the nav'>
                     {/*//! Add Button */}
                     <Menubar.Menu>
-                        <Menubar.Trigger className="select-none font-medium leading-none rounded text-[13px] flex items-center justify-between gap-[2px] data-[highlighted]:bg-violet4 data-[state=open]:bg-violet4">
+                        <Menubar.Trigger className="select-none font-medium leading-none rounded text-[13px] flex items-center justify-between gap-[2px]" aria-label="Show More" >
                             <AiOutlinePlus size={20} />
                         </Menubar.Trigger>
                         <Menubar.Portal>
@@ -138,7 +137,7 @@ export default function BigScreenNavbar() {
                     {/*//! langusge button */}
                     <RiEnglishInput size={20} />
                     {/*//! login and logout */}
-                    
+
                     <SignedIn> <UserButtonAndBill /> </SignedIn>
                     <SignedOut> <SignButtons /> </SignedOut>
 
@@ -151,3 +150,5 @@ export default function BigScreenNavbar() {
 
     )
 }
+
+export default BigScreenNavbar

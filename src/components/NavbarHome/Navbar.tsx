@@ -1,12 +1,12 @@
 "use client"
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import dynamic from 'next/dynamic';
 
 const SideBar = dynamic(() => import('./SideBar'), { ssr: false });
 const SmallScreenNavbar = dynamic(() => import("./SmallScreenNavbar"), { ssr: false });
 const BigScreenNavbar = dynamic(() => import("./BigScreenNavbar"), {ssr: false});
 
-export default function Navbar() {
+const Navbar:FC=() =>{
     const [openSideBar, setOpenSideBar] = useState<boolean>(false)
     const handleOpenSideBar = () => setOpenSideBar(!openSideBar)
     const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
@@ -36,3 +36,5 @@ export default function Navbar() {
         </>
     )
 }
+
+export default Navbar;

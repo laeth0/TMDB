@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { FC } from 'react'
 
 const data = [
     { name: "RuiZafon", green: "43.3%", red: "100%", Image: "", ContentGreen: "1,313,082", ContentRed: "45,494", color: "#D29001" },
@@ -13,7 +13,7 @@ const data = [
     { name: "jack-kn", green: "5%", red: "10%", Image: "", ContentGreen: "5,256", ContentRed: "3,850", color: "#D40242" },
     { name: "tmdb77059018", green: "50%", red: "100%", Image: "", ContentGreen: "15,038", ContentRed: "3,588", color: "#0177D2" },
 ];
-export default function LeaderboardSection() {
+const LeaderboardSection:FC =()=> {
 
     return (
         <section>
@@ -53,3 +53,4 @@ export default function LeaderboardSection() {
         </section>
     )
 }
+export default LeaderboardSection;

@@ -1,9 +1,10 @@
 "use client"
 import * as Accordion from '@radix-ui/react-accordion';
-import { Ref, forwardRef } from 'react';
+import {  Ref, forwardRef } from 'react';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
 import cn from '../../Shared/TwMerge'
+import Link from 'next/link';
 
 interface forwardRefItemProp extends Accordion.AccordionItemProps {
     children: React.ReactNode;
@@ -41,7 +42,7 @@ const AccordionContent = forwardRef(({ children, className, ...props }: forwardR
     </Accordion.Content>
 ));
 
-export default function SideBar({ openSideBar, handleOpenSideBar }: { openSideBar: boolean, handleOpenSideBar: Function }) {
+const SideBar = ({ openSideBar, handleOpenSideBar }: { openSideBar: boolean, handleOpenSideBar: Function }) => {
     return (
         <nav className={`text-white fixed ${openSideBar ? "left-0" : "-left-[70%]"} top-0 bottom-0 w-[70%] bg-tmdbDarkBlue z-[999] p-9 ease-[ease] duration-300`}>
             <div className='mb-8 flex justify-end'>
@@ -74,7 +75,7 @@ export default function SideBar({ openSideBar, handleOpenSideBar }: { openSideBa
                     <AccordionContent>
                         <ul className='text-[rgba(255,255,255,.6)] font-semibold gap-2 flex flex-col'>
                             <li>
-                                <a href="#" title="Popular TV shows">Popular</a>
+                                <Link href="/PopularTVShows" title="Popular TV shows">Popular</Link>
                             </li>
                             <li>
                                 <a href="#" title="Top rated TV shows">Top Rated</a>
@@ -123,3 +124,4 @@ export default function SideBar({ openSideBar, handleOpenSideBar }: { openSideBa
         </nav>
     )
 }
+export default SideBar;

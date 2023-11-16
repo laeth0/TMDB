@@ -12,7 +12,7 @@ export default function SmallScreenNavbar({ openSideBar, handleOpenSideBar }: { 
 
     return (
         <div className="flex items-center justify-around flex-1">
-            <GiHamburgerMenu size={20} onClick={handleOpenSideBar} className="cursor-pointer" aria-expanded={openSideBar ? "true" : "false"} />
+            <GiHamburgerMenu size={20} onClick={handleOpenSideBar} className="cursor-pointer" aria-label="button to open sidebar" />
             <Link href="/" aria-label="the is the header image and take you to main page" >
                 <Image className="h-5 w-auto" src={NavbarImage} alt="the is the header image" />
             </Link>

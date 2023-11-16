@@ -70,6 +70,15 @@ const config: Config = {
                 "yellow-to-blue": "linear-gradient(to right,#c0fecf 0,#1ed5a9 100%)",
                 "Orange-to-Red": "linear-gradient(to right,rgba(253, 193, 112,1) 0%,rgba(217, 59, 99,1) 100%)",
             },
+            keyframes: {
+                show: {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' },
+                },
+            },
+            animation: {
+                ShowElements: 'show 1s ease-in-out',
+            }
         },
     },
     plugins: [

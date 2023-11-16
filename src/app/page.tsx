@@ -24,7 +24,6 @@ const Home: NextPage = () => {
       <SectionMoviesShow title="Free To Watch" sectionData={[
         { title: "Movies", url: "/discover/movie?include_adult=false&include_video=false&language=en-US&page=9&sort_by=popularity.desc" },
         { title: "TV", url: "/discover/movie?include_adult=false&include_video=false&language=en-US&page=10&sort_by=popularity.desc" }]} />
-
       <LeaderboardSection />
     </>
   )
