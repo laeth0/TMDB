@@ -5,10 +5,12 @@ import { Base_URL_for_TMDB_Images, general_options_for_TMDB_API, Base_URL_for_TM
 import Image from 'next/image'
 import { MovieListType } from '@/Shared/Types'
 import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 export default function Carusel({ Specific_URL }: { Specific_URL: string }) {
     // const res = await fetch(`${Base_URL_for_TMDB_API}/${Specific_URL}`, general_options_for_TMDB_API);
     // const data: MovieListType = await res.json();
+    const { ref, inView, entry } = useInView({ triggerOnce: true });
 
     const [data, setData] = useState<MovieListType | null>();
     const fetchData = () => {
@@ -19,13 +21,13 @@ export default function Carusel({ Specific_URL }: { Specific_URL: string }) {
     }
     useEffect(() => {
         setData(null)
-        fetchData();
-
-    }, [Specific_URL])
+        if (inView)
+            fetchData();
+    }, [Specific_URL, inView])
 
     return (
-        <ul className="flex h-[400px] overflow-x-scroll overflow-y-hidden gap-6 bg-CaruselImage bg-[center_105px] bg-no-repeat">
-            {
+        <ul ref={ref} className="flex h-[400px] overflow-x-scroll overflow-y-hidden gap-6 bg-CaruselImage bg-[center_105px] bg-no-repeat">
+            {data ?
                 data?.results.map(movie =>
                     <li className="animate-ShowElements relative flex-[0_0_150px] gap-3 flex flex-col" key={movie.id}>
                         <Image className='h-56 w-[150px] select-none rounded-imageBorderRadius' width={150} height={224} src={`${Base_URL_for_TMDB_Images}${movie.poster_path}`} alt="this is film image" />
@@ -35,7 +37,82 @@ export default function Carusel({ Specific_URL }: { Specific_URL: string }) {
                         </div>
                         <Circle vote_average={movie.vote_average} />
                         <DropDownMenuForFilmImage />
-                    </li>)
+                    </li>
+                ) :
+                <>
+                    <div className="flex-[0_0_150px] rounded-md ">
+                        <div className="animate-pulse flex flex-col gap-4">
+                            <div className="bg-[#F2F2F2] h-56 w-[150px] rounded-imageBorderRadius grid place-items-center">
+                                <Image className='select-none' src="/skelaton.svg" width={50} height={24} alt="skelaton svg" />
+                            </div>
+                            <div className='bg-[#F2F2F2] w-24 h-4 mx-auto'></div>
+                        </div>
+                    </div>
+                    <div className="flex-[0_0_150px] rounded-md ">
+                        <div className="animate-pulse flex flex-col gap-4">
+                            <div className="bg-[#F2F2F2] h-56 w-[150px] rounded-imageBorderRadius grid place-items-center">
+                                <Image className='select-none' src="/skelaton.svg" width={50} height={24} alt="skelaton svg" />
+                            </div>
+                            <div className='bg-[#F2F2F2] w-24 h-4 mx-auto'></div>
+                        </div>
+                    </div>
+                    <div className="flex-[0_0_150px] rounded-md ">
+                        <div className="animate-pulse flex flex-col gap-4">
+                            <div className="bg-[#F2F2F2] h-56 w-[150px] rounded-imageBorderRadius grid place-items-center">
+                                <Image className='select-none' src="/skelaton.svg" width={50} height={24} alt="skelaton svg" />
+                            </div>
+                            <div className='bg-[#F2F2F2] w-24 h-4 mx-auto'></div>
+                        </div>
+                    </div>
+                    <div className="flex-[0_0_150px] rounded-md ">
+                        <div className="animate-pulse flex flex-col gap-4">
+                            <div className="bg-[#F2F2F2] h-56 w-[150px] rounded-imageBorderRadius grid place-items-center">
+                                <Image className='select-none' src="/skelaton.svg" width={50} height={24} alt="skelaton svg" />
+                            </div>
+                            <div className='bg-[#F2F2F2] w-24 h-4 mx-auto'></div>
+                        </div>
+                    </div>
+                    <div className="flex-[0_0_150px] rounded-md ">
+                        <div className="animate-pulse flex flex-col gap-4">
+                            <div className="bg-[#F2F2F2] h-56 w-[150px] rounded-imageBorderRadius grid place-items-center">
+                                <Image className='select-none' src="/skelaton.svg" width={50} height={24} alt="skelaton svg" />
+                            </div>
+                            <div className='bg-[#F2F2F2] w-24 h-4 mx-auto'></div>
+                        </div>
+                    </div>
+                    <div className="flex-[0_0_150px] rounded-md ">
+                        <div className="animate-pulse flex flex-col gap-4">
+                            <div className="bg-[#F2F2F2] h-56 w-[150px] rounded-imageBorderRadius grid place-items-center">
+                                <Image className='select-none' src="/skelaton.svg" width={50} height={24} alt="skelaton svg" />
+                            </div>
+                            <div className='bg-[#F2F2F2] w-24 h-4 mx-auto'></div>
+                        </div>
+                    </div>
+                    <div className="flex-[0_0_150px] rounded-md ">
+                        <div className="animate-pulse flex flex-col gap-4">
+                            <div className="bg-[#F2F2F2] h-56 w-[150px] rounded-imageBorderRadius grid place-items-center">
+                                <Image className='select-none' src="/skelaton.svg" width={50} height={24} alt="skelaton svg" />
+                            </div>
+                            <div className='bg-[#F2F2F2] w-24 h-4 mx-auto'></div>
+                        </div>
+                    </div>
+                    <div className="flex-[0_0_150px] rounded-md ">
+                        <div className="animate-pulse flex flex-col gap-4">
+                            <div className="bg-[#F2F2F2] h-56 w-[150px] rounded-imageBorderRadius grid place-items-center">
+                                <Image className='select-none' src="/skelaton.svg" width={50} height={24} alt="skelaton svg" />
+                            </div>
+                            <div className='bg-[#F2F2F2] w-24 h-4 mx-auto'></div>
+                        </div>
+                    </div>
+                    <div className="flex-[0_0_150px] rounded-md ">
+                        <div className="animate-pulse flex flex-col gap-4">
+                            <div className="bg-[#F2F2F2] h-56 w-[150px] rounded-imageBorderRadius grid place-items-center">
+                                <Image className='select-none' src="/skelaton.svg" width={50} height={24} alt="skelaton svg" />
+                            </div>
+                            <div className='bg-[#F2F2F2] w-24 h-4 mx-auto'></div>
+                        </div>
+                    </div>
+                </>
             }
         </ul>
     )
