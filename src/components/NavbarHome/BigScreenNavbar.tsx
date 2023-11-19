@@ -22,7 +22,7 @@ const BigScreenNavbar: FC = () => {
                 <Link href="/" aria-label="the is the header image and take you to main page">
                     <Image className="h-5 w-auto" src={NavbarImage} alt="the is the header image" />
                 </Link>
-                <Menubar.Root className="flex p-[3px] rounded-md shadow-[0_2px_10px]">
+                <Menubar.Root className="flex p-[3px] rounded-md">
                     <Menubar.Menu>
                         <Menubar.Trigger className="py-2 px-3 select-none font-medium leading-none rounded text-[13px] flex items-center justify-between gap-[2px] data-[highlighted]:bg-violet4 data-[state=open]:bg-violet4">
                             Movies
@@ -109,7 +109,7 @@ const BigScreenNavbar: FC = () => {
 
             {/*//- end of first section */}
             <div className="flex gap-8 justify-center items-center">
-                <Menubar.Root className="flex p-[3px] gap-8 px-6 items-center rounded-md shadow-[0_2px_10px]" aria-label='root of the nav'>
+                <Menubar.Root className="flex p-[3px] gap-8 px-6 items-center rounded-md" aria-label='root of the nav'>
                     {/*//! Add Button */}
                     <Menubar.Menu>
                         <Menubar.Trigger className="select-none font-medium leading-none rounded text-[13px] flex items-center justify-between gap-[2px]" aria-label="Show More" >
