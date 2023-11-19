@@ -13,13 +13,15 @@ export default function Carusel({ Specific_URL }: { Specific_URL: string }) {
     const { ref, inView, entry } = useInView({ triggerOnce: true });
 
     const [data, setData] = useState<MovieListType | null>();
-    const fetchData = () => {
-        fetch(`${Base_URL_for_TMDB_API}${Specific_URL}`, general_options_for_TMDB_API)
-            .then(res => res.json())
-            .then(data => setData(data))
-            .catch(err => console.log(err))
-    }
+
     useEffect(() => {
+        const fetchData = () => {
+            fetch(`${Base_URL_for_TMDB_API}${Specific_URL}`, general_options_for_TMDB_API)
+                .then(res => res.json())
+                .then(data => setData(data))
+                .catch(err => console.log(err))
+        }
+        
         setData(null)
         if (inView)
             fetchData();
