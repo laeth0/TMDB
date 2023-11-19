@@ -1,4 +1,3 @@
-"use client"
 import React from 'react';
 import { Root, Item } from '@radix-ui/react-toggle-group';
 

@@ -1,4 +1,3 @@
-"use client"
 import * as Accordion from '@radix-ui/react-accordion';
 import {  Ref, forwardRef } from 'react';
 import { HiOutlineChevronDown } from 'react-icons/hi';

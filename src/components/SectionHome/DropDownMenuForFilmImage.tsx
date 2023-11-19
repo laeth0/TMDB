@@ -1,4 +1,3 @@
-"use client"
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { useState } from 'react';
 import { BsThreeDots } from "react-icons/bs";

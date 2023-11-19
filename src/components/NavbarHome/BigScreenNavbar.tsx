@@ -1,4 +1,3 @@
-"use client"
 import dynamic from 'next/dynamic';
 import { FaSearch } from "react-icons/fa";
 import { AiOutlinePlus } from "react-icons/ai";

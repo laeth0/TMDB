@@ -1,4 +1,3 @@
-"use client"
 import * as Select from '@radix-ui/react-select';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 
