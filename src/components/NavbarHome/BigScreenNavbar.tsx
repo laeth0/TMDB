@@ -9,7 +9,7 @@ import NavbarImage from '@/../public/NavbarImage.svg'
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { FC } from 'react';
 
-const UserButtonAndBill = dynamic(() => import('./UserButtonAndBill'), { ssr: false });
+const UserButtonAndBill = dynamic(() => import('./UserButtonAndBill'));
 const SignButtons = dynamic(() => import('./SignButtons'));
 
 

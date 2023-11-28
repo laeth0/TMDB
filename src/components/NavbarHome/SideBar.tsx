@@ -1,5 +1,5 @@
 import * as Accordion from '@radix-ui/react-accordion';
-import {  Ref, forwardRef } from 'react';
+import React, {  Ref, forwardRef } from 'react';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
 import cn from '../../Shared/TwMerge'

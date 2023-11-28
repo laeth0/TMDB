@@ -2,9 +2,9 @@
 import { FC, useEffect, useState } from "react";
 import dynamic from 'next/dynamic';
 
-const SideBar = dynamic(() => import('./SideBar'), { ssr: false });
-const SmallScreenNavbar = dynamic(() => import("./SmallScreenNavbar"), { ssr: false });
-const BigScreenNavbar = dynamic(() => import("./BigScreenNavbar"), {ssr: false});
+const SideBar = dynamic(() => import('./SideBar'));
+const SmallScreenNavbar = dynamic(() => import("./SmallScreenNavbar"));
+const BigScreenNavbar = dynamic(() => import("./BigScreenNavbar"));
 
 const Navbar:FC=() =>{
     const [openSideBar, setOpenSideBar] = useState<boolean>(false)
@@ -30,7 +30,7 @@ const Navbar:FC=() =>{
     return (
         <>
             <header className="h-[7.5vh] bg-tmdbDarkBlue flex items-center  text-white">
-                {isSmallScreen ? <SmallScreenNavbar openSideBar={openSideBar} handleOpenSideBar={handleOpenSideBar} /> : <BigScreenNavbar />}
+                {isSmallScreen ? <SmallScreenNavbar handleOpenSideBar={handleOpenSideBar} /> : <BigScreenNavbar />}
             </header>
             {isSmallScreen ? <SideBar openSideBar={openSideBar} handleOpenSideBar={handleOpenSideBar} /> :null}
         </>

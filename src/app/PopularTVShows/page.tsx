@@ -11,7 +11,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 
 const People: NextPage = () => {
     const [data, setData] = useState<popular[]>([])
-    let [count, setCount] = useState<number>(1)
+    const [count, setCount] = useState<number>(1)
 
     useEffect(() => {
         function getData() {
@@ -50,7 +50,7 @@ const People: NextPage = () => {
                         {
                             data?.map((movie, index) =>
                                 <li className="relative  bg-red gap-3 flex flex-col w-full h-full" key={index}>
-                                    <Image className='h-auto w-auto rounded-imageBorderRadius select-none cursor-pointer flex-1' width={150} height={224} priority src={`${Base_URL_for_TMDB_Images}${movie.poster_path}`} alt="this is film image" />
+                                    <Image className='h-auto w-auto rounded-imageBorderRadius select-none cursor-pointer flex-1' priority width={150} height={224}  src={`${Base_URL_for_TMDB_Images}${movie.poster_path}`} alt="this is film image" />
                                     <div className='grid items-center justify-items-center'>
                                         <h2 className='text-black font-bold cursor-pointer'>{movie.name || "Beacon 23"}</h2>
                                         <p className='text-base text-[rgba(0,0,0,.6)]'>{movie.first_air_date || "2023-09-15"}</p>

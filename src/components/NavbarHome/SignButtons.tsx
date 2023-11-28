@@ -1,4 +1,3 @@
-
 import { SignUpButton, SignInButton } from "@clerk/nextjs";
 
 export default function SignButtons() {

@@ -4,6 +4,7 @@ import './globals.css'
 import Footer from '../components/Footer'
 import { ClerkProvider } from '@clerk/nextjs'
 import Navbar from '../components/NavbarHome/Navbar'
+import React from "react";
 
 
 const globalFont = Source_Sans_3({
@@ -25,7 +26,7 @@ const globalFont = Source_Sans_3({
 
 
 export const metadata: Metadata = {
-    title: 'Laeth',// The Movie Database(TMDB)
+    title: 'The Movie Database(TMDB)',
     description: 'The Movie Database (TMDB) is a popular, user editable database for movies and TV shows.',
     icons: {
         icon: ["/favicon.png"],
@@ -39,9 +40,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <body className={`${globalFont.variable} debug-screens`}>
                 <ClerkProvider>
                     <Navbar />
-                    <main className='flex flex-col gap-10'> {/*//! please dont remove main tag  */}
+                    <main className='flex flex-col gap-10' role="main" >
                         {children}
                     </main>
+
                     <Footer />
                 </ClerkProvider>
             </body>

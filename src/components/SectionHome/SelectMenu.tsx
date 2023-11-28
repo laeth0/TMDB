@@ -1,5 +1,6 @@
 import * as Select from '@radix-ui/react-select';
 import { HiOutlineChevronDown } from 'react-icons/hi';
+import React from "react";
 
 export default function SelectMenu({ dataSelect, setSelected }: { dataSelect: Array<String>; setSelected : React.Dispatch<React.SetStateAction<string>>}){
 

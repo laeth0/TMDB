@@ -7,7 +7,7 @@ import NavbarImage from '@/../public/NavbarImage.svg'
 import { UserButton } from "@clerk/nextjs";
 import { useUser } from "@clerk/nextjs"; //# i can use it in client components
 
-export default function SmallScreenNavbar({ openSideBar, handleOpenSideBar }: { openSideBar: boolean; handleOpenSideBar:Function}) {
+export default function SmallScreenNavbar({ handleOpenSideBar }: { handleOpenSideBar:Function}) {
     const { user } = useUser(); //# i can use it in client components
 
     return (
