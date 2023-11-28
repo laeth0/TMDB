@@ -3,7 +3,7 @@ import { type NextPage } from 'next'
 
 const SignUpPage: NextPage = () => {
     return (
-        <div className="flex justify-center items-center py-20 h-screen">
+        <div className="flex justify-center items-center py-20 min-h-screen">
             <SignUp appearance={{
                 variables: {
                     colorPrimary: "rgb(3, 37, 65)"

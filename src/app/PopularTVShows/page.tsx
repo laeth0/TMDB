@@ -32,7 +32,7 @@ const People: NextPage = () => {
 
     return (
         <section>
-            <div className="container flex flex-col gap-12 my-10">
+            <div className="container flex flex-col gap-12 my-10 min-h-screen">
                 <h2 className='text-3xl font-semibold'>Popular TV Shows</h2>
 
                 <InfiniteScroll

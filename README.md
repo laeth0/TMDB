@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# The Movie Database(TMDB)
 
-## Getting Started
+## Overview
 
-First, run the development server:
+Welcome to The Movie Database(TMDB) where you can watch films and TV shows, site  Authentication is powered by Clerk, supporting login/sign-up via email, GitHub SSO, or the traditional email method.
+
+## Features
+
+- **Home Page:** Displays the latest Movies and trending TV shows
+- **Profile Page:** Displays user images, username, name and favourite movies.
+- **Responsive Design:** Ensures usability on various devices.
+- **SEO-Friendly:** Optimized for search engines.
+- **Accessibility:** Designed with good accessibility practices.
+- **high performance:** implemented several strategies and best practices to improve performance like Server-Side Rendering (SSR), Lazy Loading and Caching Strategies.
+
+## Technologies Used
+
+- React
+- Next.js
+- Tailwind CSS
+- Clerk (for authentication)
+- TypeScript
+- Git
+- Radix ui
+- Eslint (for debugging)
+- React icons
+- vercel (for deployment)
+
+## **Getting Started**
+
+First, run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Home (Main Page)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![home page.png](https://github.com/laeth0/TMDB/assets/119698773/0e38b8f2-0327-498f-8f6d-06008d3358f7)
 
-## Learn More
+### Signin
 
-To learn more about Next.js, take a look at the following resources:
+![signin.png](https://github.com/laeth0/TMDB/assets/119698773/7951fdee-1c65-4317-b83f-6987999d3f85)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Signup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![signup.png](https://github.com/laeth0/TMDB/assets/119698773/9f3a9fc1-ed00-481c-b390-93c01529352a)
 
-## Deploy on Vercel
+### Popular TV shows
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![PopularTVShows.png](https://github.com/laeth0/TMDB/assets/119698773/c3ea895b-4a45-4a20-8289-af7cc1a73bc2)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### loading
+
+![loading page.png](https://github.com/laeth0/TMDB/assets/119698773/6aa20887-a1b8-4b43-80c7-948f5a7b5a34)
